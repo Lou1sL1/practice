@@ -12,6 +12,6 @@ public:
         std::cout<<"Initialized."<<std::endl;
     }
     virtual ~Animal(){
-        
+        cout<<
     }
 };
