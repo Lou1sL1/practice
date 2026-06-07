@@ -2,16 +2,20 @@
 #include <string>
 
 
-class Animal{
+class Book{
 private:
-    std::string name;
-    std::string var;
-    int amount;
+    std::string author;
+    std::string title;
+    int isbn;
+    bool isAvailable;
+
+    
+
 public:
-    Animal(std::string name,std::string var,int amount):name(name),var(var),amount(amount){
-        std::cout<<"Constructor has been done."<<std::endl;
+    Book(const std::string& a,const std::string& t,int isbn,bool iA):author(a),title(t),isbn(isbn),isAvailable(iA){
+        std::cout<<"Constructor has been executed."<<std::endl;
     }
-    virtual ~Animal(){
-        std::cout<<"Destructor has been done."<<std::endl;
+    virtual ~Book(){
+        std::cout<<"Destructor has been executed."<<std::endl;
     }
 };
