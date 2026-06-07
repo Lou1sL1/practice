@@ -19,3 +19,14 @@ public:
         std::cout<<"Destructor has been executed."<<std::endl;
     }
 };
+
+
+
+int main(){
+    
+    
+    
+    
+    
+    return 0;
+}
