@@ -3,7 +3,7 @@
 
 
 class Book{
-private:
+protected:
     std::string author;
     std::string title;
     int isbn;
@@ -16,9 +16,18 @@ public:
         std::cout<<"Constructor has been executed."<<std::endl;
     }
     virtual ~Book(){
-        std::cout<<"Destructor has been executed."<<std::endl;
+        std::cout<<"Book"<<title<<"removed."<<std::endl;
+    }
+    virtual std::string getAuthor() const{
+        return author;
     }
 };
+
+
+class EBook:public Book{
+
+};
+
 
 
 
