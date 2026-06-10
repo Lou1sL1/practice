@@ -11,7 +11,7 @@ protected:
 
 public:
     Book(const std::string& a,const std::string& t,int isbn,bool iA):author(a),title(t),isbn(isbn),isAvailable(iA){
-        std::cout<<"Constructor has been executed."<<std::endl;
+        std::cout<<"Constructor of Book has been executed."<<std::endl;
     }
     virtual ~Book(){
         std::cout<<"Book "<<title<<" removed."<<std::endl;
@@ -44,7 +44,19 @@ public:
 
 
 class EBook:public Book{
-
+private:
+    double fileSize;
+public:
+    EBook(const std::string& a,const std::string& t,int isbn,bool iA,double fileSize):Book(a,t,isbn,iA),fileSize(fileSize){
+        std::cout<<"Constructor of EBook bas been executed."<<std::endl;
+    }
+    bool borrow() override {
+        isAvailable=false;
+        std::cout<<title<<" downloaded."<<std::endl;
+    }
+    ~EBook(){
+        std::cout<<"Destructor of EBook has been executed."<<std::endl;
+    }
 };
 
 
