@@ -9,17 +9,36 @@ protected:
     int isbn;
     bool isAvailable;
 
-    
-
 public:
     Book(const std::string& a,const std::string& t,int isbn,bool iA):author(a),title(t),isbn(isbn),isAvailable(iA){
         std::cout<<"Constructor has been executed."<<std::endl;
     }
     virtual ~Book(){
-        std::cout<<"Book"<<title<<"removed."<<std::endl;
+        std::cout<<"Book "<<title<<" removed."<<std::endl;
     }
     virtual std::string getAuthor() const{
         return author;
+    }
+    virtual std::string const getTitle(){
+        return title;
+    }
+    virtual std::string const getAuthor(){
+        return author;
+    }
+    virtual int const getIsbn(){
+        return isbn;
+    }
+    virtual bool borrow(){
+        isAvailable=false;
+        std::cout<<title<<" borrowed."<<std::endl;
+    }
+    virtual bool returnBook(){
+        isAvailable=true;
+        std::cout<<title<<" returned."<<std::endl;
+    
+    }
+    virtual bool checkAvailable(){
+        return isAvailable;
     }
 };
 
